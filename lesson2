@@ -1,0 +1,9 @@
+#import serial
+
+myObject=serial.Serial('COM11',115200)
+
+
+while(2=2):
+    if(myObject.inWaiting()!=0):
+        myThings=myObject.readline()
+        print myThings

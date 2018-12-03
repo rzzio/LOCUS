@@ -1,0 +1,21 @@
+"""
+#import serial
+from visual import *
+myArduino=serial.Serial('COM11',115200)
+"""
+#import random
+from visual import *
+myCylinder=cylinder(title='Cylinder1',radius=0.3,pos=(-3,0,0),length=6,color=color.white)
+myBox=box(length=0.05,width=2,height=2,color=color.green,pos=(0,0,0))
+myLabel=label(text='My Target Distance: ',pos=(0,2,0),box=false,height=25,color=color.red)
+while 5==5:
+    rate(18)
+    distance=random.randint(1,6)
+    print distance
+    #if(myArduino.inWaiting()!=0):
+    # myData=myArduino.readline()
+    #print myData
+    # distance=float(myData)
+    myCylinder.length=distance
+    myBox.pos=(-3+distance,0,0)
+    myLabel.text='My Target Distance: '+str(distance)
